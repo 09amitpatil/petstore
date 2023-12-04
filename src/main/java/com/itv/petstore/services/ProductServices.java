@@ -43,4 +43,40 @@ public class ProductServices {
     public Product getProductById(Integer id) {
         return product.get(id);
     }
+
+    public Product addProduct(Product p) {
+        p.setId(atomic.incrementAndGet());
+        product.put(p.getId(), p);
+           return p;
+     }
+
+    public String deleteProduct(Integer id) {
+        Product productexits=product.get(id);
+        if(productexits!=null)
+        {
+            product.remove(id);
+            return "product deleted successfully....";
+        }
+        else{
+            return "no such product";
+        }
+        
+    }
+
+    public String updateProduct(Integer id, Product p) {
+        
+        Product productexits=product.get(id);
+        if(productexits!=null)
+        {
+            p.setId(id);
+            product.put(id,p);
+            return "product updated successfully....";
+        }
+        else{
+            return "no such product";
+        }
+        
+    }
+
+   
 }
