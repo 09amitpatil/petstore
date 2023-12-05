@@ -7,7 +7,6 @@ import java.util.concurrent.atomic.AtomicInteger;
 import org.springframework.stereotype.Service;
 
 import com.itv.petstore.dtos.RegistorUserDto;
-import com.itv.petstore.entites.Product;
 import com.itv.petstore.entities.User;
 @Service
 public class UserServices {

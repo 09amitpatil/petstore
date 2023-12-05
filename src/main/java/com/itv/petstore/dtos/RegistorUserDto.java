@@ -1,5 +1,7 @@
 package com.itv.petstore.dtos;
 
+import com.itv.petstore.validators.VerifyPassword.VerifyPasswod;
+
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotEmpty;
@@ -8,6 +10,7 @@ import jakarta.validation.constraints.Size;
 import lombok.Data;
 
 @Data
+@VerifyPasswod(Filed = "password", matchingFiled = "confirmpassword")
 public class RegistorUserDto {
     private Integer id;
     @Size(min = 4,max = 10,message = "First name length should have min 4 max 10 char")
