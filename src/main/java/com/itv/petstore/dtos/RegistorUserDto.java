@@ -28,7 +28,8 @@ public class RegistorUserDto {
     
     @com.itv.petstore.validators.mobile
     private String  mobile;
+    
     @Min(value = 10000 ,message = "minimum salary should be 10000")
-    @Max(value = 100000,message = "minimum salary should be 100000")
+    @Max(value = 100000,message = "minimum salary should be 100000") 
     private long salary;
 }

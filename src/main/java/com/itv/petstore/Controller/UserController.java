@@ -1,4 +1,6 @@
 package com.itv.petstore.Controller;
+import java.util.List;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -10,6 +12,8 @@ import com.itv.petstore.entities.User;
 import com.itv.petstore.services.UserServices;
 
 import jakarta.validation.Valid;
+import org.springframework.web.bind.annotation.GetMapping;
+
 @RestController
 public class UserController {
     @Autowired 
@@ -21,4 +25,12 @@ public class UserController {
         return this.userServices.registerUser(registorUserDto);
     }
     
+    @GetMapping("/users")
+    public List<User>getAll()
+   {
+    return this.userServices.getAll();
 }
+}
+
+    
+

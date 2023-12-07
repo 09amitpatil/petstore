@@ -1,24 +1,27 @@
 package com.itv.petstore.entities;
 
-import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.NotNull;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
 import lombok.Data;
 
 @Data
+@Entity
 public class User {
-    private Integer id;
-    @NotNull@NotEmpty
-    private String firstname;
-     @NotNull@NotEmpty
-    private String lastname;
-     @NotNull@NotEmpty
-    private String email;
-     @NotNull@NotEmpty
-    private String password;
-     @NotNull@NotEmpty
-    private String mobile;
-    
-    private long salary;
-
-    
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+        private Integer id;
+    @Column(name="fname",nullable=false)
+        private String firstname;
+    @Column(name="lname")
+        private String lastname;
+    @Column(unique = true)
+        private String email;
+    @Column(unique = true)
+        private String password;
+        
+        private String mobile;
 }
