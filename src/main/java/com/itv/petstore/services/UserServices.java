@@ -31,5 +31,11 @@ public class UserServices {
     public List<User> getAll() {
         return repository.findAll();
        }
-    
+       public User getById(Integer id){
+        return repository.findById(id).orElse(null);
+}
+     public void deleteuser(Integer id) 
+     {
+        repository.deleteById(id);
+    }
 }
