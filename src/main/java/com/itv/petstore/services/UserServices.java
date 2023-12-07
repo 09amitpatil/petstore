@@ -28,14 +28,21 @@ public class UserServices {
         return user;
 
     }
-    public List<User> getAll() {
+    public List<User> getAll() 
+       {
         return repository.findAll();
        }
-       public User getById(Integer id){
+    public User getById(Integer id)
+       {
         return repository.findById(id).orElse(null);
-}
-     public void deleteuser(Integer id) 
-     {
+       }
+    public void deleteuser(Integer id) 
+       {
         repository.deleteById(id);
-    }
+       }
+    public User updateUser(Integer id,User user)
+       {
+        user.setId(id);
+        return repository.save(user);
+       }
 }
