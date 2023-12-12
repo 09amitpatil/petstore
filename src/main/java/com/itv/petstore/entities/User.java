@@ -1,5 +1,10 @@
 package com.itv.petstore.entities;
 
+import java.time.Instant;
+
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -24,4 +29,11 @@ public class User {
         private String password;
         
         private String mobile;
+    @CreatedDate
+    private Instant CreatedAt;
+    @LastModifiedDate
+    private Instant ModifiedAt;
+
+    
+
 }

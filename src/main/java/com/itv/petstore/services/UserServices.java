@@ -45,4 +45,17 @@ public class UserServices {
         user.setId(id);
         return repository.save(user);
        }
+
+       public   List<User>findByfirstname(String firstname)
+       {
+         return this.repository.findByfirstname(firstname);
+       }
+
+       public     List<User>findByemail(String email)
+       {
+         return this.repository.findByemailContaining(email);
+       }
+
+ 
+
 }

@@ -1,5 +1,10 @@
 package com.itv.petstore.dtos;
 
+import java.time.Instant;
+
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
+
 import com.itv.petstore.validators.VerifyPassword.VerifyPasswod;
 
 import jakarta.validation.constraints.Max;
@@ -32,4 +37,8 @@ public class RegistorUserDto {
     @Min(value = 10000 ,message = "minimum salary should be 10000")
     @Max(value = 100000,message = "minimum salary should be 100000") 
     private long salary;
+    @CreatedDate
+    private Instant CreatedAt;
+    @LastModifiedDate
+    private Instant ModifiedAt;
 }
