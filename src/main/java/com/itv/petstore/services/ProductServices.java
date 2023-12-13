@@ -6,7 +6,8 @@ import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import org.springframework.stereotype.Service;
-import com.itv.petstore.entites.Product;
+
+import com.itv.petstore.entities.Product;
 
 @Service
 public class ProductServices {

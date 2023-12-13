@@ -1,4 +1,4 @@
-package com.itv.petstore.entites;
+package com.itv.petstore.entities;
 
 import lombok.Data;
 
